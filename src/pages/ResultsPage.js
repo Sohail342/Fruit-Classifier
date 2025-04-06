@@ -104,7 +104,7 @@ const ResultsPage = () => {
           <Card>
             <CardMedia
               component="img"
-              image={`http://localhost:8000/uploads/${filename}`}
+              image={`https://fruit-classifier-backend-production.up.railway.app/uploads/${filename}`}
               alt="Classified image"
               sx={{ height: 400, objectFit: 'contain' }}
             />

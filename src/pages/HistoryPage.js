@@ -14,7 +14,7 @@ import Alert from '@mui/material/Alert';
 import Divider from '@mui/material/Divider';
 import { formatDistanceToNow } from 'date-fns';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://fruit-classifier-backend-production.up.railway.app/api';
 
 const HistoryPage = () => {
   const [history, setHistory] = useState([]);

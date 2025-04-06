@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://fruit-classifier-backend-production.up.railway.app/api';
 
 // Create axios instance with default config
 const apiClient = axios.create({
