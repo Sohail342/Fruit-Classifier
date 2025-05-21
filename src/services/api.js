@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'https://fruit-classifier-backend-production.up.railway.app/api';
+// Change API URL to point to local backend instead of Railway
+const API_URL = 'http://94.136.188.243/api/';
 
 // Create axios instance with default config
 const apiClient = axios.create({

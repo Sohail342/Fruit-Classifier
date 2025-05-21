@@ -19,7 +19,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { isValidImage, createImagePreview } from '../utils/imageUtils';
 
-const API_URL = 'https://fruit-classifier-backend-production.up.railway.app/api';
+const API_URL = 'http://94.136.188.243/api/';
 
 // Styled component for the file input
 const VisuallyHiddenInput = styled('input')(`

@@ -79,7 +79,7 @@ const HistoryPage = () => {
                     <CardMedia
                       component="img"
                       height="200"
-                      image={`http://localhost:8000/uploads/${item.filename}`}
+                      image={`http://94.136.188.243/uploads/${item.filename}`}
                       alt="Classified image"
                       sx={{ objectFit: 'cover' }}
                     />
