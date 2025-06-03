@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Change API URL to point to local backend instead of Railway
-const API_URL = 'http://94.136.188.243/api/';
+const API_URL = 'http://94.136.188.243/api/fruits/';
 
 // Create axios instance with default config
 const apiClient = axios.create({
