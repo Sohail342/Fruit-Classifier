@@ -95,10 +95,29 @@ const UploadPage = () => {
       navigate(`/results/${response.data.filename}`);
     } catch (err) {
       console.error('Error uploading image:', err);
-      setError(
-        err.response?.data?.detail ||
-        'Failed to upload image. Please try again.'
-      );
+      
+      // Provide more specific error messages based on the error type
+      let errorMessage = 'Failed to upload image. Please try again.';
+      
+      if (err.code === 'ERR_NETWORK') {
+        errorMessage = 'Network error: Unable to connect to the server. Please check your internet connection and try again.';
+      } else if (err.response) {
+        // The server responded with a status code outside the 2xx range
+        if (err.response.status === 400) {
+          errorMessage = 'Bad request: The server could not process your image. Please try a different image format.';
+        } else if (err.response.status === 413) {
+          errorMessage = 'Image too large: Please select a smaller image file.';
+        } else if (err.response.status === 415) {
+          errorMessage = 'Unsupported file type: Please select a valid image file (JPEG, PNG, etc.).';
+        } else if (err.response.data?.detail) {
+          errorMessage = err.response.data.detail;
+        }
+      } else if (err.request) {
+        // The request was made but no response was received
+        errorMessage = 'No response from server: The server is not responding. Please try again later.';
+      }
+      
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -183,7 +202,6 @@ const UploadPage = () => {
                   disabled={loading}
                 >
                   <MenuItem value="fruit_classifier">Fruit Classifier</MenuItem>
-                  <MenuItem value="mobilenet_v2">MobileNet V2 (General)</MenuItem>
                 </Select>
               </FormControl>
               

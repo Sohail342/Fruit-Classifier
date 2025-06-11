@@ -133,7 +133,6 @@ const ResultsPage = () => {
                   disabled={loading}
                 >
                   <MenuItem value="fruit_classifier">Fruit Classifier</MenuItem>
-                  <MenuItem value="mobilenet_v2">MobileNet V2 (General)</MenuItem>
                 </Select>
               </FormControl>
             </Box>
