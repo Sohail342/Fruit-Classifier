@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // Change API URL to point to local backend instead of Railway
-const API_URL = 'http://94.136.188.243/api/fruits/';
+// Using HTTP instead of HTTPS to avoid certificate issues
+const API_URL = 'http://94.136.188.243/assignment/assignment';
 
 // Create axios instance with default config
 const apiClient = axios.create({
@@ -9,6 +10,8 @@ const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  // Adding timeout to prevent long waiting times
+  timeout: 10000,
 });
 
 // Image classification API calls
